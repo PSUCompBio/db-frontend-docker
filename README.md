@@ -16,6 +16,6 @@ In Step 6: Configure security details. You need to have ports 80 and 3000 open f
 
  sudo docker login -u USERNAME_ON_DOCKERHUB (be sure to have an account at https://hub.docker.com/)
 
- sudo docker tag       DOCKER_IMAGE_NAME      USERNAME_ON_DOCKERHUB/db-frontend:latest
+ sudo docker tag       DOCKER_IMAGE_ID      USERNAME_ON_DOCKERHUB/db-frontend:latest
 
  sudo docker push USERNAME_ON_DOCKERHUB/db-frontend:latest
