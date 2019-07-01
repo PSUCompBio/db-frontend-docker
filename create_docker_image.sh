@@ -36,7 +36,7 @@ systemctl enable docker
 #git clone -b minor-fixes https://github.com/PSUCompBio/aws-config.git
 # clone master branch
 git clone https://github.com/PSUCompBio/db-frontend-docker.git
-cd aws-config/docker_scripts
+cd db-frontend-docker/docker_scripts
 docker build -t db-frontend .
 cd /home/$UNAMEX
 sudo chown -R ubuntu *
