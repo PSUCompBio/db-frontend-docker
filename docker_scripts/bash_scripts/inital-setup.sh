@@ -47,6 +47,7 @@ elif [ "$INSTANCE" == "ubuntu" ]; then
         apt-get install -y libxt6
         npm i -g npx
 				apt-get install mesa-utils -y
+				sudo apt-get install libtool -y
 				apt-get install flex -y
 				apt-get install python-mako
 				apt-get install z3 -y
