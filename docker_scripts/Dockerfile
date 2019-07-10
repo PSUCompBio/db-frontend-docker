@@ -34,6 +34,7 @@ RUN ls -ltr
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
+ARG VTK_ROOT=/home/${UNAMEX}/VTK
 RUN /bin/bash bash_scripts/install-mergepolydata.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 
