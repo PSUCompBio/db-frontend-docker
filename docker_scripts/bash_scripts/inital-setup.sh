@@ -46,6 +46,10 @@ elif [ "$INSTANCE" == "ubuntu" ]; then
         apt-get install -y libgl1 libxt6 cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
         apt-get install -y libxt6
         npm i -g npx
+				apt-get install mesa-utils -y
+				apt-get install flex -y
+				apt-get install python-mako
+				apt-get install z3 -y
 else
         echo "Instance Type does not exist in config_bash script - please update it."
 fi
