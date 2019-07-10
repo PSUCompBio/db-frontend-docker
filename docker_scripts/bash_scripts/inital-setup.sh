@@ -49,8 +49,9 @@ elif [ "$INSTANCE" == "ubuntu" ]; then
 				apt-get install mesa-utils -y
 				sudo apt-get install libtool -y
 				apt-get install flex -y
-				apt-get install python-mako
+				apt-get install python-mako -y
 				apt-get install z3 -y
+				sudo apt-get install libdrm2 libdrm-intel1 libdrm-radeon1 libdrm-nouveau2 -y
 else
         echo "Instance Type does not exist in config_bash script - please update it."
 fi
