@@ -43,6 +43,8 @@ apt-get install libdrm2 libdrm-intel1 libdrm-radeon1 libdrm-nouveau2 -y
 apt-get install libxml2-dev libxml2 -y
 apt-get install ocaml -y
 apt-get install libomxil-bellagio-dev -y
+apt-get install meson -y
+apt-get install libpciaccess-dev -y
 
 echo " -------------------------------------------------------------------"
 echo " ----------       Finished Installing Essential Dev Tools     ------"
@@ -59,6 +61,19 @@ echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"
 echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
+wget https://dri.freedesktop.org/libdrm/libdrm-2.4.99.tar.bz2
+bunzip2 libdrm-2.4.99.tar.bz2
+tar -xvf libdrm-2.4.99.tar
+cd libdrm-2.4.99
+mkdir build
+cd build
+../configure
+make -j8
+make install
+echo " -------------------------------------------------------------------"
+echo " ----------           Complete libdrm 2.4.99 Install          ------"
+echo " -------------------------------------------------------------------"
+cd /home/$UNAMEX
 git clone https://github.com/llvm/llvm-project.git
 cd llvm-project/llvm
 mkdir build
@@ -70,13 +85,12 @@ echo " -------------------------------------------------------------------"
 echo " ----------           Complete LLVM Install                ------"
 echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
-git clone -b 13.0 https://gitlab.freedesktop.org/mesa/mesa.git
+git clone https://gitlab.freedesktop.org/mesa/mesa.git
 cd mesa
 mkdir build
 cd build
 ../autogen.sh
 ../configure  --prefix=/usr/local/mesa --enable-opengl --disable-gles1 --disable-gles2 --disable-va --disable-xvmc --disable-vdpau --enable-shared-glapi --disable-texture-float --enable-gallium-llvm --enable-llvm-shared-libs  --with-gallium-drivers=swrast,swr  --disable-dri --with-dri-drivers= --disable-egl --with-egl-platforms= --disable-gbm --disable-glx --disable-osmesa --enable-gallium-osmesa --with-llvm-prefix=/usr/local/llvm --disable-llvm-shared-libs
-
 make -j8
 make install
 echo " -------------------------------------------------------------------"
