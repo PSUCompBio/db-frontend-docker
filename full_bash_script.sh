@@ -125,6 +125,8 @@ echo " -------------------------------------------------------------------"
 echo " ----------       Complete MergePolyData Install              ------"
 echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
+git clone https://github.com/PSUCompBio/db-frontend-docker
+cp db-frontend-docker/docker_scripts/bash_scripts/bashrc /home/${UNAMEX}/.bashrc
 chown -R $UNAMEX *
 echo " -------------------------------------------------------------------"
 echo " ----------            Complete Assigning Permissions         ------"
