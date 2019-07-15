@@ -49,12 +49,12 @@ elif [ "$INSTANCE" == "ubuntu" ]; then
 				apt-get install mesa-utils -y
 				apt-get install libtool -y
 				apt-get install flex -y
-				apt-get install python-mako -y
-				apt-get install z3 -y
-				apt-get install libdrm2 libdrm-intel1 libdrm-radeon1 libdrm-nouveau2 -y
-				apt-get install libxml2-dev libxml2 -y
-        apt-get install ocaml -y
-        apt-get install libomxil-bellagio-dev -y
+				# apt-get install python-mako -y
+				# apt-get install z3 -y
+				# apt-get install libdrm2 libdrm-intel1 libdrm-radeon1 libdrm-nouveau2 -y
+				# apt-get install libxml2-dev libxml2 -y
+        # apt-get install ocaml -y
+        # apt-get install libomxil-bellagio-dev -y
 else
         echo "Instance Type does not exist in config_bash script - please update it."
 fi

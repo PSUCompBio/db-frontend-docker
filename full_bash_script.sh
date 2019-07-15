@@ -60,42 +60,6 @@ make install
 echo " -------------------------------------------------------------------"
 echo " ----------              Finished Installing Swig             ------"
 echo " -------------------------------------------------------------------"
-# cd /home/$UNAMEX
-# wget https://dri.freedesktop.org/libdrm/libdrm-2.4.99.tar.bz2
-# bunzip2 libdrm-2.4.99.tar.bz2
-# tar -xvf libdrm-2.4.99.tar
-# cd libdrm-2.4.99
-# mkdir build
-# cd build
-# ../configure
-# make -j8
-# make install
-# echo " -------------------------------------------------------------------"
-# echo " ----------           Complete libdrm 2.4.99 Install          ------"
-# echo " -------------------------------------------------------------------"
-# cd /home/$UNAMEX
-# git clone https://github.com/llvm/llvm-project.git
-# cd llvm-project/llvm
-# mkdir build
-# cd build
-# cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/llvm -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_ENABLE_RTTI=ON -DLLVM_INSTALL_UTILS=ON -DLLVM_TARGETS_TO_BUILD:STRING=X86
-# make -j8
-# make install
-# echo " -------------------------------------------------------------------"
-# echo " ----------           Complete LLVM Install                ------"
-# echo " -------------------------------------------------------------------"
-# cd /home/$UNAMEX
-# git clone https://gitlab.freedesktop.org/mesa/mesa.git
-# cd mesa
-# mkdir build
-# cd build
-# ../autogen.sh
-# ../configure  --prefix=/usr/local/mesa --enable-opengl --disable-gles1 --disable-gles2 --disable-va --disable-xvmc --disable-vdpau --enable-shared-glapi --disable-texture-float --enable-gallium-llvm --enable-llvm-shared-libs  --with-gallium-drivers=swrast,swr  --disable-dri --with-dri-drivers= --disable-egl --with-egl-platforms= --disable-gbm --disable-glx --disable-osmesa --enable-gallium-osmesa --with-llvm-prefix=/usr/local/llvm --disable-llvm-shared-libs
-# make -j8
-# make install
-# echo " -------------------------------------------------------------------"
-# echo " ----------           Complete MESA Install                ------"
-# echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
 git clone https://github.com/Kitware/VTK
 VTK_ROOT=/home/$UNAMEX/VTK
@@ -105,7 +69,7 @@ cd build
 cmake ../ -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release
 make -j8
 cd /home/$UNAMEX
-echo "export LD_LIBRARY_PATH=$VTK_ROOT/build/bin:$VTK_ROOT/build/lib:$LD_LIBRARY_PATH" >> /home/$UNAMEX/.bash_profile
+echo "export LD_LIBRARY_PATH=$VTK_ROOT/build/bin:$VTK_ROOT/build/lib" >> /home/$UNAMEX/.bash_profile
 echo "export VTK_ROOT=/home/$UNAMEX/VTK" >> /home/$UNAMEX/.bash_profile
 source /home/$UNAMEX/.bash_profile
 echo $VTK_ROOT
@@ -132,4 +96,5 @@ echo " ----------            Completed Assigning Permissions         ------"
 echo " -------------------------------------------------------------------"
 echo "Initiation script complete! See /var/log/cloud-init-output.log for install log." >> InstallComplete
 cd /home/$UNAMEX
+chown -R $UNAMEX .bash_profile
 chown -R $UNAMEX *

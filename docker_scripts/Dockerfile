@@ -33,11 +33,9 @@ RUN ls -ltr
 #RUN /bin/bash config_bash.sh
 RUN /bin/bash bash_scripts/inital-setup.sh
 RUN /bin/bash bash_scripts/install-swig.sh
-RUN /bin/bash bash_scripts/install-llvm.sh
-RUN /bin/bash bash_scripts/install-mesa.sh
 RUN /bin/bash bash_scripts/install-vtk-src.sh
 ARG VTK_ROOT=/home/${UNAMEX}/VTK
-RUN /bin/bash bash_scripts/install-mergepolydata.sh
+RUN /bin/bash bash_scripts/install-projectedtexture.sh
 RUN /bin/bash bash_scripts/install-complete.sh
 
 # clean up and setup
