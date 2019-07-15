@@ -115,8 +115,8 @@ echo " -------------------------------------------------------------------"
 source /home/$UNAMEX/.bash_profile
 cd /home/$UNAMEX
 echo $VTK_ROOT
-git clone https://github.com/PSUCompBio/MergePolyData
-cd MergePolyData
+git clone https://github.com/PSUCompBio/ProjectedTexture-VTK
+cd ProjectedTexture-VTK
 mkdir build
 cd build
 cmake .. -DVTK_DIR=$VTK_ROOT/build
@@ -127,11 +127,9 @@ echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
 git clone https://github.com/PSUCompBio/db-frontend-docker
 cp db-frontend-docker/docker_scripts/bash_scripts/bashrc /home/${UNAMEX}/.bashrc
-chown -R $UNAMEX *
 echo " -------------------------------------------------------------------"
 echo " ----------            Complete Assigning Permissions         ------"
 echo " -------------------------------------------------------------------"
 echo "Initiation script complete! See /var/log/cloud-init-output.log for install log." >> InstallComplete
-chown -R $UNAMEX InstallComplete
 cd /home/$UNAMEX
-sudo chown -R ubuntu *
+chown -R $UNAMEX *
