@@ -27,9 +27,7 @@ echo $UNAMEX
 echo " -------------------------------------------------------------------"
 echo " -------------------------------------------------------------------"
 cd /home/$UNAMEX
-
 sudo apt-get update
-
 apt-get update -y
 apt-get install -y libgl1 libxt6 cmake-curses-gui xvfb nodejs npm freeglut3-dev libblas-dev liblapack-dev python3-pip autotools-dev automake libpcre3-dev bison byacc libfreetype6-dev pkg-config libfontconfig1-dev mdm
 apt-get install -y libxt6
@@ -45,11 +43,9 @@ apt-get install ocaml -y
 apt-get install libomxil-bellagio-dev -y
 apt-get install meson -y
 apt-get install libpciaccess-dev -y
-
 echo " -------------------------------------------------------------------"
 echo " ----------       Finished Installing Essential Dev Tools     ------"
 echo " -------------------------------------------------------------------"
-
 cd /home/$UNAMEX
 git clone https://github.com/swig/swig.git
 cd swig
@@ -97,4 +93,5 @@ echo " -------------------------------------------------------------------"
 echo "Initiation script complete! See /var/log/cloud-init-output.log for install log." >> InstallComplete
 cd /home/$UNAMEX
 chown -R $UNAMEX .bash_profile
+source .bashrc
 chown -R $UNAMEX *
