@@ -19,7 +19,7 @@ In Step 6: Configure security details. You need to have ports 80 and 3000 open f
 
 ## Once docker image is created, you can test it:
 
-### List the images created:
+### List the images created :
 sudo docker ps -a OR sudo docker image ls
 
 ### Run the docker image:
